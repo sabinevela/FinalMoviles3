@@ -8,8 +8,6 @@ class User {
     required this.email,
     required this.password,
   });
-
-  // Convertir de JSON a objeto User
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
       username: json['username'],
@@ -18,7 +16,6 @@ class User {
     );
   }
 
-  // Convertir de objeto User a JSON
   Map<String, dynamic> toJson() {
     return {
       'username': username,
