@@ -1,0 +1,54 @@
+import 'package:flutter/material.dart';
+import 'package:app_taller/screens/CardScreen.dart';
+import 'package:app_taller/screens/CatalogScreen.dart';
+import 'package:app_taller/screens/PlayerScreen.dart';
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  int _selectedIndex = 0;
+
+  final List<Widget> _screens = [
+    const CardScreen(),
+    const CatalogScreen(),
+    const PlayerScreen(),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() => _selectedIndex = index);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Multicines'),
+        centerTitle: true,
+      ),
+      body: _screens[_selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.movie_filter),
+            label: 'Películas',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.category),
+            label: 'Catálogo',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.play_circle),
+            label: 'Reproducir',
+          ),
+        ],
+      ),
+    );
+  }
+}
