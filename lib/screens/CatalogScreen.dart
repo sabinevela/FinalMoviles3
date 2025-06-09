@@ -34,7 +34,7 @@ class CatalogScreen extends StatelessWidget {
       {
         'title': '5 Seconds of Summer: So Perfect',
         'genre': 'Documental • 5SOS',
-        'image': 'https://m.media-amazon.com/images/I/71q8-3K2uqL._AC_UF894,1000_QL80_.jpg',
+        'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDAGwjFjwuSCUULFGLP6otXZCCIhVb9Uu68A&s',
       },
       {
         'title': 'Avengers: Endgame',
@@ -71,7 +71,7 @@ class CatalogScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Catálogo de Películas'),
-        backgroundColor: Colors.redAccent,
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       ),
       drawer: Drawer(
         backgroundColor: Colors.white,
