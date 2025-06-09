@@ -48,6 +48,40 @@ final List<Movie> allMovies = [
     imageUrl:
         'https://play-lh.googleusercontent.com/qJYOlnHj3UfvgwogydoxgyvjgHpLYIxNF24ihwPLOZWxEQCZhAan9pTE-6t3zysibmDl2k_udhEY_-muh3Nk',
   ),
+
+
+  Movie(
+    title: 'This Is Us',
+    genre: 'Documental • One Direction',
+    videoUrl:
+        'https://www.google.com/search?q=trailer+this+is+us+one+direction&rlz=1C5CHFA_enEC1142EC1142&oq=trailer+this+is+us+o&gs_lcrp=EgZjaHJvbWUqCAgBEAAYFhgeMgYIABBFGDkyCAgBEAAYFhgeMggIAhAAGBYYHjIICAMQABgWGB4yCggEEAAYChgWGB4yCAgFEAAYFhgeMggIBhAAGBYYHjIICAcQABgWGB4yCAgIEAAYFhgeMggICRAAGBYYHtIBCDQwODdqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:53ddc484,vid:XrDQQXVG1aA,st:0',
+    imageUrl:
+        'https://m.media-amazon.com/images/I/81NpabfCP3L.jpg',
+  ),
+  Movie(
+    title: '5 Seconds of Summer',
+    genre: 'Documental • 5SOS',
+    videoUrl:
+        'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
+    imageUrl:
+        'https://m.media-amazon.com/images/M/MV5BZWU4YjZkNTQtNGQ4ZC00YmRhLThjYzEtZTIzNTliODZiYjBjXkEyXkFqcGc@._V1_.jpg',
+  ),
+  Movie(
+    title: 'Avengers: Endgame',
+    genre: 'Acción • Aventura',
+    videoUrl:
+        'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+    imageUrl:
+        'https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg',
+  ),
+  Movie(
+    title: 'La La Land',
+    genre: 'Musical • Romance',
+    videoUrl:
+        'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+    imageUrl:
+        'https://upload.wikimedia.org/wikipedia/en/a/ab/La_La_Land_%28film%29.png',
+  ),
 ];
 
 void main() {
