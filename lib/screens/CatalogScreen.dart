@@ -9,69 +9,69 @@ class CatalogScreen extends StatelessWidget {
       {
         'title': 'Misión Imposible',
         'genre': 'Acción',
-        'image': 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/1E5baAaEse26fej7uHcjOgEE2t2.jpg',
+        'image': 'https://m.media-amazon.com/images/M/MV5BMjQ3MzNlOTEtNGU5ZS00ODI0LTgxNDctMjA4MTUxMjY4NTU0XkEyXkFqcGc@._V1_.jpg',
       },
       {
         'title': 'Son Como Niños',
         'genre': 'Comedia',
-        'image': 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/fAD2H7dgXh3sRo2zUdavLqCE10U.jpg',
+        'image': 'https://m.media-amazon.com/images/M/MV5BMDJmYWI5NDctZjM5Zi00NzJiLTk4YTEtZjFhYTZhMTJiYWEzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg',
       },
       {
         'title': 'El Pianista',
         'genre': 'Drama',
-        'image': 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/2hR4v4FDKHzBflhSIWYO6gqVhCX.jpg',
+        'image': 'https://upload.wikimedia.org/wikipedia/en/a/a6/The_Pianist_movie.jpg',
       },
       {
         'title': 'El Conjuro',
         'genre': 'Terror',
-        'image': 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/wmSKfD1wVn3d6EVUD5W2Cke5Hxy.jpg',
+        'image': 'https://play-lh.googleusercontent.com/qJYOlnHj3UfvgwogydoxgyvjgHpLYIxNF24ihwPLOZWxEQCZhAan9pTE-6t3zysibmDl2k_udhEY_-muh3Nk',
       },
       {
         'title': 'This Is Us',
         'genre': 'Documental • One Direction',
-        'image': 'https://m.media-amazon.com/images/I/81zFvTT9XkL._AC_UF894,1000_QL80_.jpg',
+        'image': 'https://m.media-amazon.com/images/I/81NpabfCP3L.jpg',
       },
       {
-        'title': '5 Seconds of Summer: So Perfect',
+        'title': '5 Seconds of Summer',
         'genre': 'Documental • 5SOS',
-        'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDAGwjFjwuSCUULFGLP6otXZCCIhVb9Uu68A&s',
+        'image': 'https://m.media-amazon.com/images/M/MV5BZWU4YjZkNTQtNGQ4ZC00YmRhLThjYzEtZTIzNTliODZiYjBjXkEyXkFqcGc@._V1_.jpg',
       },
       {
         'title': 'Avengers: Endgame',
         'genre': 'Acción • Aventura',
-        'image': 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/or06FN3Dka5tukK1e9sl16pB3iy.jpg',
+        'image': 'https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg',
       },
       {
         'title': 'La La Land',
         'genre': 'Musical • Romance',
-        'image': 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/uDO8zWDhfWwoFdKS4fzkUJt0Rf0.jpg',
+        'image': 'https://upload.wikimedia.org/wikipedia/en/a/ab/La_La_Land_%28film%29.png',
       },
       {
         'title': 'Smile',
         'genre': 'Terror • Psicológico',
-        'image': 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/aPqcQwu4VGEewPhagWNncDbJ9Xp.jpg',
+        'image': 'https://upload.wikimedia.org/wikipedia/en/e/e7/Smile_2022_film_poster.png',
       },
       {
         'title': 'Intensamente',
         'genre': 'Animación • Familiar',
-        'image': 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/lRHE0vzf3oYJrhbsHXjIkF4Tl5A.jpg',
+        'image': 'https://upload.wikimedia.org/wikipedia/en/0/0a/Inside_Out_%282015_film%29_poster.jpg',
       },
       {
         'title': 'Barbie',
         'genre': 'Fantasía • Comedia',
-        'image': 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg',
+        'image': 'https://upload.wikimedia.org/wikipedia/en/0/0b/Barbie_2023_poster.jpg',
       },
       {
         'title': 'Elvis',
         'genre': 'Biografía • Música',
-        'image': 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/qBOKWqAFbveZ4ryjJJwbie6tXkQ.jpg',
+        'image': 'https://upload.wikimedia.org/wikipedia/en/e/e8/Elvis_2022_film_poster.jpg',
       },
     ];
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Catálogo de Películas'),
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
       ),
       drawer: Drawer(
         backgroundColor: Colors.white,
@@ -85,7 +85,7 @@ class CatalogScreen extends StatelessWidget {
               child: Text(
                 'Catálogos',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 24,
                 ),
               ),
@@ -153,6 +153,7 @@ class CatalogScreen extends StatelessWidget {
                       movie['image']!,
                       fit: BoxFit.cover,
                       width: double.infinity,
+                      errorBuilder: (context, error, stackTrace) => const Icon(Icons.broken_image),
                     ),
                   ),
                 ),
