@@ -43,10 +43,6 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: Icon(Icons.category),
             label: 'Catálogo',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.play_circle),
-            label: 'Reproducir',
-          ),
         ],
       ),
     );
