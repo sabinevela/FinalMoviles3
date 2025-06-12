@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "808957040758",
+    "firebase_url": "https://app-taller-2-default-rtdb.firebaseio.com",
+    "project_id": "app-taller-2",
+    "storage_bucket": "app-taller-2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:808957040758:android:8623ed88764a984edf2757",
+        "android_client_info": {
+          "package_name": "com.example.app_taller"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_2vvqbQd-zWX_buNgCwKDWPR2UQdt0lw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
