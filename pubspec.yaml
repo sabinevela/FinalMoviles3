@@ -10,16 +10,19 @@ dependencies:
   flutter:
     sdk: flutter
   path_provider: ^2.1.5
-  video_player: ^2.5.1
+  video_player: ^2.7.0
   youtube_player_flutter: ^9.1.1
+  
+  
+  supabase_flutter: ^2.5.6
+  
+  chewie: ^1.8.0
+  
+  http: ^1.2.1
+  
+  flutter_spinkit: ^5.2.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
-
-flutter:
-  uses-material-design: true
-  assets:
-    - assets/data/Users.json
-    - assets/images/
+  flutter_lints: ^3.0.0

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:app_taller/screens/CardScreen.dart';
-import 'package:app_taller/screens/CatalogScreen.dart';
-import 'package:app_taller/screens/PlayerScreen.dart';
+import 'package:app_taller/screens/CatalogScreen.dart';  
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -16,11 +15,12 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _screens = [
     const CardScreen(),
     const CatalogScreen(),
-    const PlayerScreen(),
   ];
 
   void _onItemTapped(int index) {
-    setState(() => _selectedIndex = index);
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 
   @override
