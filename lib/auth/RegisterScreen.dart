@@ -185,7 +185,7 @@ class _RegisterScreenState extends State<RegisterScreen>
               child: TextFormField(
                 controller: c1,
                 obscureText: obscure1,
-                style: const TextStyle(color: Colors.white), // TEXTO BLANCO
+                style: const TextStyle(color: Colors.white), 
                 decoration: InputDecoration(
                   labelText: label1,
                   prefixIcon: Icon(icon1, color: dorado),
@@ -201,7 +201,7 @@ class _RegisterScreenState extends State<RegisterScreen>
               child: TextFormField(
                 controller: c2,
                 obscureText: obscure2,
-                style: const TextStyle(color: Colors.white), // TEXTO BLANCO
+                style: const TextStyle(color: Colors.white), 
                 decoration: InputDecoration(
                   labelText: label2,
                   prefixIcon: Icon(icon2, color: dorado),
@@ -254,7 +254,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                 const SizedBox(height: 16),
                 TextFormField(
                   controller: edadController,
-                  style: const TextStyle(color: Colors.white), // TEXTO BLANCO
+                  style: const TextStyle(color: Colors.white), 
                   decoration: InputDecoration(
                     labelText: 'Edad',
                     prefixIcon: Icon(Icons.cake_outlined, color: dorado),
@@ -266,7 +266,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                 const SizedBox(height: 16),
                 TextFormField(
                   controller: usernameController,
-                  style: const TextStyle(color: Colors.white), // TEXTO BLANCO
+                  style: const TextStyle(color: Colors.white), 
                   decoration: InputDecoration(
                     labelText: 'Nombre de usuario',
                     prefixIcon: Icon(Icons.account_circle_outlined, color: dorado),
@@ -277,7 +277,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                 const SizedBox(height: 16),
                 TextFormField(
                   controller: emailController,
-                  style: const TextStyle(color: Colors.white), // TEXTO BLANCO
+                  style: const TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                     labelText: 'Correo electrónico',
                     prefixIcon: Icon(Icons.email_outlined, color: dorado),
