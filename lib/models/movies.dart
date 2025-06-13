@@ -45,7 +45,7 @@ final List<Movie> movies = [
   Movie(
     title: 'BLACKPINK: LIGHT UP THE SKY',
     thumbnailUrl: 'https://upload.wikimedia.org/wikipedia/en/e/ed/Blackpink_Light_Up_the_Sky_poster.png',
-    videoUrl: 'https://supabase_link/blackpink.mp4',
+    videoUrl: 'https://ixqeqjsaxtuaqidpboqj.supabase.co/storage/v1/object/public/peliculas//BLACKPINK_%20LIGHT%20UP%20THE%20SKY%20_%20Official%20Trailer%20_%20Netflix.mp4',
     genre: 'Documentales',
     description: 'El ascenso de BLACKPINK al estrellato, con imágenes exclusivas y entrevistas sinceras.',
     year: '2020',
@@ -63,7 +63,7 @@ final List<Movie> movies = [
   Movie(
     title: 'JOHN WICK 4',
     thumbnailUrl: 'https://m.media-amazon.com/images/I/81J1DaRKzUL._AC_UF894,1000_QL80_.jpg',
-    videoUrl: 'https://supabase_link/johnwick4.mp4',
+    videoUrl: 'https://ixqeqjsaxtuaqidpboqj.supabase.co/storage/v1/object/public/peliculas//videoplayback.mp4',
     genre: 'Acción',
     description: 'John Wick enfrenta a un nuevo enemigo global mientras busca su libertad definitiva.',
     year: '2023',
@@ -99,7 +99,7 @@ final List<Movie> movies = [
   Movie(
     title: 'THE NOTEBOOK',
     thumbnailUrl: 'https://m.media-amazon.com/images/M/MV5BNTYxMDliN2QtNTMwNC00ODU3LWFhODgtMWFhODQ0Mzc0NGE0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg',
-    videoUrl: 'https://supabase_link/notebook.mp4',
+    videoUrl: 'https://ixqeqjsaxtuaqidpboqj.supabase.co/storage/v1/object/public/peliculas//The%20Notebook%20(2004)%20Official%20Trailer%20-%20Ryan%20Gosling%20Movie.mp4',
     genre: 'Romance',
     description: 'Una historia de amor inolvidable entre Noah y Allie a través de los años y la distancia.',
     year: '2004',
@@ -125,7 +125,7 @@ final List<Movie> movies = [
   Movie(
     title: 'THE PURSUIT OF HAPPYNESS',
     thumbnailUrl: 'https://m.media-amazon.com/images/S/pv-target-images/3aadbc7110f4b426b8c7505483a27d037237c82a383ddc19585cd42f4a3d64b4.jpg',
-    videoUrl: 'https://supabase_link/happyness.mp4',
+    videoUrl: 'https://ixqeqjsaxtuaqidpboqj.supabase.co/storage/v1/object/public/peliculas//The%20Pursuit%20of%20Happyness%20(2006)%20Official%20Trailer%201%20-%20Will%20Smith%20Movie.mp4',
     genre: 'Drama',
     description: 'La inspiradora historia real de Chris Gardner, un padre soltero que lucha por una mejor vida.',
     year: '2006',
