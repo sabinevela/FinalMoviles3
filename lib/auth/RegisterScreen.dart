@@ -36,9 +36,13 @@ class _RegisterScreenState extends State<RegisterScreen>
   void initState() {
     super.initState();
     _animationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 800));
-    _fadeIn =
-        CurvedAnimation(parent: _animationController, curve: Curves.easeIn);
+      vsync: this,
+      duration: const Duration(milliseconds: 800),
+    );
+    _fadeIn = CurvedAnimation(
+      parent: _animationController,
+      curve: Curves.easeIn,
+    );
     _animationController.forward();
   }
 
@@ -64,8 +68,9 @@ class _RegisterScreenState extends State<RegisterScreen>
 
     try {
       UserCredential userCredential = await _auth.createUserWithEmailAndPassword(
-          email: emailController.text.trim(),
-          password: passwordController.text.trim());
+        email: emailController.text.trim(),
+        password: passwordController.text.trim(),
+      );
 
       final uid = userCredential.user!.uid;
 
@@ -79,8 +84,7 @@ class _RegisterScreenState extends State<RegisterScreen>
         'email': emailController.text.trim(),
       });
 
-      _showAlert("¡Registro exitoso!",
-          "Usuario registrado correctamente ✅", true);
+      _showAlert("¡Registro exitoso!", "Usuario registrado correctamente ✅", true);
     } on FirebaseAuthException catch (e) {
       String errorMsg = "Ocurrió un error, intenta de nuevo.";
       if (e.code == 'email-already-in-use') {
@@ -89,7 +93,7 @@ class _RegisterScreenState extends State<RegisterScreen>
         errorMsg = "La contraseña es muy débil.";
       }
       _showAlert("Error", errorMsg, false);
-    } catch (e) {
+    } catch (_) {
       _showAlert("Error", "Ocurrió un error, intenta de nuevo.", false);
     } finally {
       setState(() => _loading = false);
@@ -102,25 +106,15 @@ class _RegisterScreenState extends State<RegisterScreen>
       builder: (context) => AlertDialog(
         title: Row(
           children: [
-            Icon(success ? Icons.check_circle : Icons.error,
-                color: success ? Colors.green : Colors.red),
+            Icon(success ? Icons.check_circle : Icons.error),
             const SizedBox(width: 8),
-            Text(
-              title,
-              style: const TextStyle(color: Colors.black),
-            ),
+            Text(title),
           ],
         ),
-        content: Text(
-          message,
-          style: const TextStyle(color: Colors.black),
-        ),
+        content: Text(message),
         actions: [
           TextButton(
-            child: const Text(
-              "Aceptar",
-              style: TextStyle(color: Colors.black),
-            ),
+            child: const Text("Aceptar"),
             onPressed: () {
               Navigator.pop(context);
               if (success) {
@@ -168,57 +162,58 @@ class _RegisterScreenState extends State<RegisterScreen>
     return null;
   }
 
+  Widget _buildTwoFields(
+    TextEditingController c1,
+    String label1,
+    IconData icon1,
+    TextEditingController c2,
+    String label2,
+    IconData icon2, {
+    bool obscure1 = false,
+    bool obscure2 = false,
+    String? Function(String?)? validator1,
+    String? Function(String?)? validator2,
+  }) {
+    return Row(
+      children: [
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.only(right: 8.0),
+            child: TextFormField(
+              controller: c1,
+              obscureText: obscure1,
+              decoration: InputDecoration(
+                labelText: label1,
+                prefixIcon: Icon(icon1),
+                border: const OutlineInputBorder(),
+              ),
+              validator: validator1,
+            ),
+          ),
+        ),
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.only(left: 8.0),
+            child: TextFormField(
+              controller: c2,
+              obscureText: obscure2,
+              decoration: InputDecoration(
+                labelText: label2,
+                prefixIcon: Icon(icon2),
+                border: const OutlineInputBorder(),
+              ),
+              validator: validator2,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    final dorado = const Color(0xFFFFD700);
-
-    Widget _buildTwoFields(TextEditingController c1, String label1, IconData icon1,
-        TextEditingController c2, String label2, IconData icon2,
-        {bool obscure1 = false, bool obscure2 = false,
-        String? Function(String?)? validator1,
-        String? Function(String?)? validator2}) {
-      return Row(
-        children: [
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.only(right: 8.0),
-              child: TextFormField(
-                controller: c1,
-                obscureText: obscure1,
-                style: const TextStyle(color: Colors.white), 
-                decoration: InputDecoration(
-                  labelText: label1,
-                  prefixIcon: Icon(icon1, color: dorado),
-                  border: const OutlineInputBorder(),
-                ),
-                validator: validator1,
-              ),
-            ),
-          ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.only(left: 8.0),
-              child: TextFormField(
-                controller: c2,
-                obscureText: obscure2,
-                style: const TextStyle(color: Colors.white), 
-                decoration: InputDecoration(
-                  labelText: label2,
-                  prefixIcon: Icon(icon2, color: dorado),
-                  border: const OutlineInputBorder(),
-                ),
-                validator: validator2,
-              ),
-            ),
-          ),
-        ],
-      );
-    }
-
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Registro'),
-      ),
+      appBar: AppBar(title: const Text('Registro')),
       body: FadeTransition(
         opacity: _fadeIn,
         child: Padding(
@@ -228,7 +223,7 @@ class _RegisterScreenState extends State<RegisterScreen>
             child: ListView(
               children: [
                 const SizedBox(height: 20),
-                Icon(Icons.person_add_alt_1, size: 80, color: dorado),
+                const Icon(Icons.person_add_alt_1, size: 80),
                 const SizedBox(height: 20),
                 _buildTwoFields(
                   nombre1Controller,
@@ -254,11 +249,10 @@ class _RegisterScreenState extends State<RegisterScreen>
                 const SizedBox(height: 16),
                 TextFormField(
                   controller: edadController,
-                  style: const TextStyle(color: Colors.white), 
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Edad',
-                    prefixIcon: Icon(Icons.cake_outlined, color: dorado),
-                    border: const OutlineInputBorder(),
+                    prefixIcon: Icon(Icons.cake_outlined),
+                    border: OutlineInputBorder(),
                   ),
                   keyboardType: TextInputType.number,
                   validator: _validateEdad,
@@ -266,30 +260,27 @@ class _RegisterScreenState extends State<RegisterScreen>
                 const SizedBox(height: 16),
                 TextFormField(
                   controller: usernameController,
-                  style: const TextStyle(color: Colors.white), 
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Nombre de usuario',
-                    prefixIcon: Icon(Icons.account_circle_outlined, color: dorado),
-                    border: const OutlineInputBorder(),
+                    prefixIcon: Icon(Icons.account_circle_outlined),
+                    border: OutlineInputBorder(),
                   ),
                   validator: (val) => _validateText(val, "Nombre de usuario", minLen: 3),
                 ),
                 const SizedBox(height: 16),
                 TextFormField(
                   controller: emailController,
-                  style: const TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Correo electrónico',
-                    prefixIcon: Icon(Icons.email_outlined, color: dorado),
-                    border: const OutlineInputBorder(),
+                    prefixIcon: Icon(Icons.email_outlined),
+                    border: OutlineInputBorder(),
                   ),
                   keyboardType: TextInputType.emailAddress,
                   validator: (val) {
                     if (val == null || val.trim().isEmpty) {
                       return "El correo es obligatorio.";
                     }
-                    if (!RegExp(r"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$")
-                        .hasMatch(val.trim())) {
+                    if (!RegExp(r"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$").hasMatch(val.trim())) {
                       return "Ingrese un correo válido.";
                     }
                     return null;
@@ -317,22 +308,12 @@ class _RegisterScreenState extends State<RegisterScreen>
                   validator2: _validateConfirmPassword,
                 ),
                 const SizedBox(height: 30),
-
                 _loading
-                    ? const Center(
-                        child: CircularProgressIndicator(color: Colors.amber))
+                    ? const Center(child: CircularProgressIndicator())
                     : ElevatedButton.icon(
                         onPressed: _register,
                         icon: const Icon(Icons.app_registration),
                         label: const Text('Registrar'),
-                        style: ElevatedButton.styleFrom(
-                          minimumSize: const Size(double.infinity, 50),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          backgroundColor: dorado,
-                          foregroundColor: Colors.black,
-                        ),
                       ),
               ],
             ),

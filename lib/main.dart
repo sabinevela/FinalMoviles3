@@ -3,6 +3,7 @@ import 'package:app_taller/auth/RegisterScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'package:app_taller/theme/app_themes.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,62 +13,66 @@ Future<void> main() async {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  ThemeMode _themeMode = ThemeMode.system;
+
+  void toggleTheme() {
+    setState(() {
+      if (_themeMode == ThemeMode.light) {
+        _themeMode = ThemeMode.dark;
+      } else {
+        _themeMode = ThemeMode.light;
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Multicines',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: const Color(0xFF121212), 
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.black,
-          foregroundColor: Color(0xFFFFD700), 
-          elevation: 0,
-        ),
-        textTheme: const TextTheme(
-          bodyMedium: TextStyle(color: Colors.white70),
-          titleLarge: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: const Color(0xFFFFD700), 
-            foregroundColor: Colors.black,
-            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-            textStyle: const TextStyle(fontSize: 16),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-        ),
-        outlinedButtonTheme: OutlinedButtonThemeData(
-          style: OutlinedButton.styleFrom(
-            side: const BorderSide(color: Color(0xFFFFD700)),
-            foregroundColor: const Color(0xFFFFD700),
-            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-            textStyle: const TextStyle(fontSize: 16),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-        ),
+      theme: temaClaro,
+      darkTheme: temaOscuro,
+      themeMode: _themeMode,
+      home: WelcomeScreen(
+        toggleTheme: toggleTheme,
+        isDarkMode: _themeMode == ThemeMode.dark,
       ),
-      home: const WelcomeScreen(),
     );
   }
 }
 
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({super.key});
+  final VoidCallback toggleTheme;
+  final bool isDarkMode;
+
+  const WelcomeScreen({
+    super.key,
+    required this.toggleTheme,
+    required this.isDarkMode,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Bienvenido'),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: Icon(isDarkMode ? Icons.brightness_7 : Icons.brightness_2),
+            onPressed: toggleTheme,
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -75,24 +80,20 @@ class WelcomeScreen extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text(
+              Text(
                 'Bienvenido a Multicines',
-                style: TextStyle(
-                  fontSize: 26,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
+                style: theme.textTheme.titleLarge,
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 16),
-              const Text(
+              Text(
                 'Por favor, inicia sesión o regístrate para continuar.',
+                style: theme.textTheme.bodyMedium,
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white70),
               ),
               const SizedBox(height: 30),
               Image.asset(
-                'assets/images/images2.png',
+                'assets/images/Multicines2.png',
                 height: 150,
               ),
               const SizedBox(height: 40),
@@ -105,6 +106,10 @@ class WelcomeScreen extends StatelessWidget {
                 },
                 icon: const Icon(Icons.login),
                 label: const Text('Iniciar Sesión'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: theme.elevatedButtonTheme.style?.backgroundColor?.resolve({}) ?? theme.primaryColor,
+                  foregroundColor: theme.elevatedButtonTheme.style?.foregroundColor?.resolve({}) ?? Colors.black,
+                ),
               ),
               const SizedBox(height: 12),
               OutlinedButton.icon(
@@ -116,6 +121,10 @@ class WelcomeScreen extends StatelessWidget {
                 },
                 icon: const Icon(Icons.app_registration),
                 label: const Text('Registrarse'),
+                style: OutlinedButton.styleFrom(
+                  side: BorderSide(color: theme.primaryColor),
+                  foregroundColor: theme.primaryColor,
+                ),
               ),
             ],
           ),

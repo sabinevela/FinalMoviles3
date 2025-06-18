@@ -1,3 +1,4 @@
+import 'package:app_taller/screens/PerfilScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:app_taller/screens/CardScreen.dart';
 import 'package:app_taller/screens/CatalogScreen.dart';
@@ -15,6 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _screens = [
     const CardScreen(),
     const CatalogScreen(),
+    const PerfilScreen(), 
   ];
 
   void _onItemTapped(int index) {
@@ -29,20 +31,12 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text('Multicines'),
         centerTitle: true,
-        backgroundColor: Colors.black,
-        foregroundColor: Colors.yellow,
       ),
       body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.black,
-        selectedItemColor: Colors.yellow,
-        unselectedItemColor: Colors.grey,
-        selectedLabelStyle: const TextStyle(
-          fontWeight: FontWeight.bold,
-        ),
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.movie_filter),
@@ -51,6 +45,10 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.category),
             label: 'Catálogo',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Perfil',
           ),
         ],
       ),

@@ -129,21 +129,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Películas Vistas y Para Ver',
-      theme: ThemeData(
-        brightness: Brightness.dark,
-        primaryColor: Colors.yellow[700],
-        scaffoldBackgroundColor: Colors.black,
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.black,
-          foregroundColor: Colors.yellow,
-        ),
-        iconTheme: const IconThemeData(color: Colors.yellow),
-        textTheme: const TextTheme(
-          titleLarge: TextStyle(color: Colors.yellow, fontWeight: FontWeight.bold),
-          bodyMedium: TextStyle(color: Colors.white),
-          titleMedium: TextStyle(color: Colors.white70),
-        ),
-      ),
+      // Sin ThemeData personalizado
       home: const CardScreen(),
       debugShowCheckedModeBanner: false,
     );
@@ -207,22 +193,22 @@ class _CardScreenState extends State<CardScreen> {
           child: const Icon(Icons.movie),
         ),
       ),
-      title: Text(movie.title, style: const TextStyle(color: Colors.white)),
-      subtitle: Text(movie.genre, style: const TextStyle(color: Colors.white70)),
+      title: Text(movie.title),
+      subtitle: Text(movie.genre),
       trailing: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           IconButton(
             icon: Icon(
               Icons.check_circle,
-              color: isWatched ? Colors.green : Colors.grey,
+              color: isWatched ? Colors.green : null,
             ),
             onPressed: () => _toggleWatched(movie),
           ),
           IconButton(
             icon: Icon(
               Icons.watch_later,
-              color: isWatchLater ? Colors.orange : Colors.grey,
+              color: isWatchLater ? Colors.orange : null,
             ),
             onPressed: () => _toggleWatchLater(movie),
           ),
@@ -246,29 +232,29 @@ class _CardScreenState extends State<CardScreen> {
       body: ListView(
         padding: const EdgeInsets.all(12),
         children: [
-          const Text('Películas Vistas', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.yellow)),
+          const Text('Películas Vistas', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
           if (watched.isEmpty)
             const Padding(
               padding: EdgeInsets.symmetric(vertical: 8),
-              child: Text('No has marcado películas como vistas.', style: TextStyle(color: Colors.white)),
+              child: Text('No has marcado películas como vistas.'),
             )
           else
             ...watched.map(movieTile).toList(),
-          const Divider(height: 40, color: Colors.yellow),
-          const Text('Para Ver Más Tarde', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.yellow)),
+          const Divider(height: 40),
+          const Text('Para Ver Más Tarde', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
           if (watchLater.isEmpty)
             const Padding(
               padding: EdgeInsets.symmetric(vertical: 8),
-              child: Text('No hay películas para ver más tarde.', style: TextStyle(color: Colors.white)),
+              child: Text('No hay películas para ver más tarde.'),
             )
           else
             ...watchLater.map(movieTile).toList(),
-          const Divider(height: 40, color: Colors.yellow),
-          const Text('Películas Disponibles', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.yellow)),
+          const Divider(height: 40),
+          const Text('Películas Disponibles', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
           if (unwatchedMovies.isEmpty)
             const Padding(
               padding: EdgeInsets.symmetric(vertical: 8),
-              child: Text('No quedan películas sin clasificar.', style: TextStyle(color: Colors.white)),
+              child: Text('No quedan películas sin clasificar.'),
             )
           else
             ...unwatchedMovies.map(movieTile).toList(),
@@ -302,7 +288,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 
     _controller.addListener(() {
       if (!_isSeeking) {
-        setState(() {}); 
+        setState(() {});
       }
     });
   }
@@ -356,16 +342,14 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
         : 0.0;
     final duration = isInitialized
         ? _controller.value.duration.inMilliseconds.toDouble()
-        : 1.0; 
+        : 1.0;
 
     final sliderValue = position.clamp(0.0, duration);
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Reproductor de Video'),
-        backgroundColor: Colors.black,
       ),
-      backgroundColor: Colors.black,
       body: Center(
         child: isInitialized
             ? Column(
@@ -376,10 +360,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                     child: VideoPlayer(_controller),
                   ),
                   const SizedBox(height: 20),
-
                   Slider(
-                    activeColor: Colors.yellow,
-                    inactiveColor: Colors.grey,
                     min: 0,
                     max: duration,
                     value: sliderValue,
@@ -395,24 +376,16 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                       _isSeeking = false;
                     },
                   ),
-
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 24.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          _formatDuration(_controller.value.position),
-                          style: const TextStyle(color: Colors.yellow),
-                        ),
-                        Text(
-                          _formatDuration(_controller.value.duration),
-                          style: const TextStyle(color: Colors.yellow),
-                        ),
+                        Text(_formatDuration(_controller.value.position)),
+                        Text(_formatDuration(_controller.value.duration)),
                       ],
                     ),
                   ),
-
                   const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -420,13 +393,11 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                       IconButton(
                         icon: const Icon(Icons.replay_10),
                         iconSize: 36,
-                        color: Colors.yellow,
                         onPressed: _rewind,
                       ),
                       IconButton(
                         icon: Icon(_controller.value.isPlaying ? Icons.pause : Icons.play_arrow),
                         iconSize: 36,
-                        color: Colors.yellow,
                         onPressed: () {
                           setState(() {
                             _controller.value.isPlaying
@@ -438,20 +409,18 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                       IconButton(
                         icon: const Icon(Icons.forward_10),
                         iconSize: 36,
-                        color: Colors.yellow,
                         onPressed: _forward,
                       ),
                       IconButton(
                         icon: const Icon(Icons.download),
                         iconSize: 36,
-                        color: Colors.yellow,
                         onPressed: _download,
                       ),
                     ],
                   )
                 ],
               )
-            : const CircularProgressIndicator(color: Colors.yellow),
+            : const CircularProgressIndicator(),
       ),
     );
   }

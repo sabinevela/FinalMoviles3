@@ -90,15 +90,8 @@ class _LoginScreenState extends State<LoginScreen>
       barrierDismissible: false,
       builder: (context) {
         return AlertDialog(
-          backgroundColor: Colors.black,
-          title: Text(
-            isSuccess ? 'Éxito' : 'Error',
-            style: const TextStyle(color: Colors.yellow),
-          ),
-          content: Text(
-            message,
-            style: const TextStyle(color: Colors.yellow),
-          ),
+          title: Text(isSuccess ? 'Éxito' : 'Error'),
+          content: Text(message),
           actions: [
             TextButton(
               onPressed: () {
@@ -111,10 +104,7 @@ class _LoginScreenState extends State<LoginScreen>
                   );
                 }
               },
-              child: const Text(
-                'Aceptar',
-                style: TextStyle(color: Colors.yellow),
-              ),
+              child: const Text('Aceptar'),
             ),
           ],
         );
@@ -124,15 +114,8 @@ class _LoginScreenState extends State<LoginScreen>
 
   @override
   Widget build(BuildContext context) {
-    const backgroundColor = Colors.black;
-    const inputTextColor = Colors.yellow;
-
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Iniciar Sesión'),
-        backgroundColor: Colors.black,
-      ),
-      backgroundColor: backgroundColor,
+      appBar: AppBar(title: const Text('Iniciar Sesión')),
       body: FadeTransition(
         opacity: _fadeIn,
         child: Padding(
@@ -140,40 +123,22 @@ class _LoginScreenState extends State<LoginScreen>
           child: Column(
             children: [
               const SizedBox(height: 40),
-              const Icon(Icons.lock_outline, size: 80, color: Colors.yellow),
+              const Icon(Icons.lock_outline, size: 80),
               const SizedBox(height: 20),
               TextField(
                 controller: emailController,
-                style: const TextStyle(color: inputTextColor),
-                cursorColor: inputTextColor,
                 decoration: const InputDecoration(
                   labelText: 'Correo electrónico',
-                  labelStyle: TextStyle(color: inputTextColor),
-                  prefixIcon: Icon(Icons.email_outlined, color: inputTextColor),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.yellow),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.yellowAccent),
-                  ),
+                  prefixIcon: Icon(Icons.email_outlined),
                 ),
                 keyboardType: TextInputType.emailAddress,
               ),
               const SizedBox(height: 16),
               TextField(
                 controller: passwordController,
-                style: const TextStyle(color: inputTextColor),
-                cursorColor: inputTextColor,
                 decoration: const InputDecoration(
                   labelText: 'Contraseña',
-                  labelStyle: TextStyle(color: inputTextColor),
-                  prefixIcon: Icon(Icons.lock, color: inputTextColor),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.yellow),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.yellowAccent),
-                  ),
+                  prefixIcon: Icon(Icons.lock),
                 ),
                 obscureText: true,
               ),
@@ -187,22 +152,10 @@ class _LoginScreenState extends State<LoginScreen>
                       ? const SizedBox(
                           width: 24,
                           height: 24,
-                          child: CircularProgressIndicator(
-                            color: Colors.black,
-                            strokeWidth: 2,
-                          ),
+                          child: CircularProgressIndicator(),
                         )
                       : const Icon(Icons.login),
-                  label: Text(
-                    _isLoading ? 'Ingresando...' : 'Ingresar',
-                    style: const TextStyle(color: Colors.black),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.yellow,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
+                  label: Text(_isLoading ? 'Ingresando...' : 'Ingresar'),
                 ),
               ),
             ],
@@ -212,4 +165,3 @@ class _LoginScreenState extends State<LoginScreen>
     );
   }
 }
-
