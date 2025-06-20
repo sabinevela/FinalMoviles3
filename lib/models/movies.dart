@@ -35,12 +35,12 @@ final List<Movie> movies = [
     year: '2023',
   ),
   Movie(
-    title: 'SHAWN MENDES - IN WONDER',
-    thumbnailUrl: 'https://m.media-amazon.com/images/M/MV5BMmU2NDJlNTctOTIzZC00NzgxLTkxMGEtYmI4NTdlNzJhNjk4XkEyXkFqcGc@._V1_.jpg',
-    videoUrl: 'https://supabase_link/shawn_inwonder.mp4',
+    title: 'BRITNEY - VS SPEARS',
+    thumbnailUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQimgRg8aV30yQyOrTlFuKDOzIkqxlAI_MalmxclMa-gDPea5t',
+    videoUrl: 'https://ixqeqjsaxtuaqidpboqj.supabase.co/storage/v1/object/public/peliculas//Britney%20vs%20Spears%20_%20Official%20Trailer%20_%20Netflix.mp4',
     genre: 'Documentales',
-    description: 'Un retrato introspectivo de Shawn Mendes que explora su vida, creatividad y presiones de la fama.',
-    year: '2020',
+    description: 'Una investigación acerca de la lucha de Britney Spears por obtener su libertad de la tutela, con entrevistas exclusivas y documentos confidenciales sobre el controversial proceso.',
+    year: '2021',
   ),
   Movie(
     title: 'BLACKPINK: LIGHT UP THE SKY',
@@ -53,12 +53,12 @@ final List<Movie> movies = [
 
   // ACCIÓN 💥🔥
   Movie(
-    title: 'SPIDER-MAN: NO WAY HOME',
-    thumbnailUrl: 'https://es.web.img2.acsta.net/c_300_300/pictures/21/12/01/12/07/0243323.jpg',
-    videoUrl: 'https://supabase_link/spiderman.mp4',
+    title: 'UNDISPUTED 3',
+    thumbnailUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw_yq6H0KDWftvFZeZ5-ZR5QGnaf2r7Qm3ZfAXv5tQwRW89_PlhRCslJLLFsX-lcU78h_tF5njSpLVAhYVEI9DZ4pq7zyUpZxuiQ4_Uw',
+    videoUrl: 'https://ixqeqjsaxtuaqidpboqj.supabase.co/storage/v1/object/public/peliculas//Undisputed%203%20-%20Official%20Trailer.mp4',
     genre: 'Acción',
-    description: 'Peter Parker lucha con las consecuencias del multiverso cuando villanos y versiones de sí mismo aparecen.',
-    year: '2021',
+    description: 'Un campeón de lucha profesional es trasladado a una prisión ucraniana para participar en un torneo en el que se competirá a vida o muerte con apuestas millonarias y en el que el vencedor obtendrá la libertad.',
+    year: '2010',
   ),
   Movie(
     title: 'JOHN WICK 4',
@@ -69,30 +69,30 @@ final List<Movie> movies = [
     year: '2023',
   ),
   Movie(
-    title: 'AVENGERS: ENDGAME',
-    thumbnailUrl: 'https://m.media-amazon.com/images/I/71niXI3lxlL._AC_SY679_.jpg',
-    videoUrl: 'https://supabase_link/endgame.mp4',
+    title: 'DESTINO FINAL: LAZOS DE SANGRE',
+    thumbnailUrl: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcThrAg4hNvLPLvhDPArKMVNU2t7FJWXlblnkvugxlq2VtsUdb6H',
+    videoUrl: 'https://ixqeqjsaxtuaqidpboqj.supabase.co/storage/v1/object/public/peliculas//DestinoFinal.mp4',
     genre: 'Acción',
-    description: 'Los Vengadores se reúnen para revertir el chasquido de Thanos y restaurar el universo.',
-    year: '2019',
+    description: 'Atormentada por una violenta pesadilla recurrente, Stefani regresa a casa para salvar a su familia.',
+    year: '2025',
   ),
 
   // COMEDIA 😂🍿
   Movie(
-    title: 'FREE GUY',
-    thumbnailUrl: 'https://lumiere-a.akamaihd.net/v1/images/b1_poster_2_-_las_d0abe55b.jpeg',
-    videoUrl: 'https://supabase_link/freeguy.mp4',
+    title: 'CON TODOS MENOS CONTIGO',
+    thumbnailUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxSkR_zRj9Qhs0CHnxYFkDs3MUIK2oHcItyWCAcqA9fLsxXhzm',
+    videoUrl: 'https://ixqeqjsaxtuaqidpboqj.supabase.co/storage/v1/object/public/peliculas//contodos.mp4',
     genre: 'Comedia',
-    description: 'Un cajero de banco descubre que es un personaje en un videojuego y decide ser el héroe.',
-    year: '2021',
+    description: 'Bea y Ben, antiguos compañeros de universidad cuya mutua atracción inicial se tornó asco, se encuentran inesperadamente juntos en una boda en Australia y fingen ser la pareja perfecta para mantener las apariencias.',
+    year: '2023',
   ),
   Movie(
-    title: 'JUMANJI: WELCOME TO THE JUNGLE',
-    thumbnailUrl: 'https://images.justwatch.com/poster/15683847/s718/jumanji-welcome-to-the-jungle.jpg',
-    videoUrl: 'https://supabase_link/jumanji.mp4',
+    title: 'LA OTRA BODA',
+    thumbnailUrl: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTww3Vf9Vma3Uns9ltNgocShfEGJrURJcVqyeIeJZLOz8gK2tRp',
+    videoUrl: 'https://ixqeqjsaxtuaqidpboqj.supabase.co/storage/v1/object/public/peliculas//otraboda.mp4',
     genre: 'Comedia',
-    description: 'Cuatro adolescentes entran en el videojuego de Jumanji y deben superar desafíos para volver.',
-    year: '2017',
+    description: 'Una mujer que planea la boda ideal de su hermana y el padre de una futura novia descubren que sus bodas están reservadas al mismo tiempo. Cuando ambas partes deciden compartir el pequeño lugar, sobreviene el caos y aguarda el desastre.',
+    year: '2025',
   ),
 
   // ROMANCE 💕🎬
@@ -105,23 +105,15 @@ final List<Movie> movies = [
     year: '2004',
   ),
   Movie(
-    title: 'ME BEFORE YOU',
-    thumbnailUrl: 'https://m.media-amazon.com/images/I/81JkrOC3MjL._AC_UF894,1000_QL80_.jpg',
-    videoUrl: 'https://supabase_link/mebeforeyou.mp4',
+    title: 'LA ULTIMA CANCION',
+    thumbnailUrl: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTwdBjojtNm-EqEGJs5tGsM0rqKgApm6L_hVqMu_jBVEzKciawk',
+    videoUrl: 'https://ixqeqjsaxtuaqidpboqj.supabase.co/storage/v1/object/public/peliculas//cancion.mp4',
     genre: 'Romance',
-    description: 'Louisa se convierte en cuidadora de Will, un joven millonario que ha perdido la voluntad de vivir.',
-    year: '2016',
+    description: 'En una ciudad de playa del sur, un hombre intenta entrar en contacto con su hija distanciada a través de su amor compartido por la música.',
+    year: '2010',
   ),
 
   // DRAMA 🎭📽️
-  Movie(
-    title: 'INTERSTELLAR',
-    thumbnailUrl: 'https://musicart.xboxlive.com/7/912b1000-0000-0000-0000-000000000002/504/image.jpg',
-    videoUrl: 'https://supabase_link/interstellar.mp4',
-    genre: 'Drama',
-    description: 'Un equipo de astronautas viaja por un agujero de gusano en busca de un nuevo hogar para la humanidad.',
-    year: '2014',
-  ),
   Movie(
     title: 'THE PURSUIT OF HAPPYNESS',
     thumbnailUrl: 'https://m.media-amazon.com/images/S/pv-target-images/3aadbc7110f4b426b8c7505483a27d037237c82a383ddc19585cd42f4a3d64b4.jpg',
